@@ -18,6 +18,8 @@ docker compose up -d
 
 服务将在 `http://localhost:3000` 启动。
 
+Dockerfile 会在安装依赖前复制 `pnpm-workspace.yaml`，读取其中允许 `@parcel/watcher` 和 `esbuild` 运行构建脚本的 `allowBuilds` 配置。Dokploy / CI 非交互构建无需运行 `pnpm approve-builds`。
+
 代码更新后重新构建：
 
 ```bash
